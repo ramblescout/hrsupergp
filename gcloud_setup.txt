@@ -1,0 +1,118 @@
+New Way:
+
+SSH in browser from the VM Instance group, "Hrsupergp-instance-group"
+
+you should land at: theaellen@hrsupergp , and then use the button to upload files
+
+next, to copy files:
+
+sudo cp file.html /var/www/html/file.html
+
+
+sudo cp  2022_HRSGP_Awards_Winners.pdf /var/www/html/downloads/2022_HRSGP_Awards_Winners.pdf
+
+
+===================
+
+git configure --globaluser.name "Thea Ganoe"
+git add .
+git commit -m "first commit"
+git restore gcloud_setup.txt
+zone:  us-east1-d
+gcloud config set compute/zone us-east1-d
+
+Quick STEPs:
+
+cd Documents/ptcclub/HRSuperGP-2023
+
+gcloud config set project solid-coral-755
+
+
+
+the key is:  randomart
+
+gcloud compute scp standings.html hrsupergp:/tmp
+gcloud compute scp schedule.html hrsupergp:/tmp
+
+gcloud compute --project "solid-coral-755" ssh --zone "us-east1-d" "hrsupergp"
+
+sudo cp /tmp/standings.html /var/www/html/standings.html
+sudo cp /tmp/schedule.html /var/www/html/schedule.html
+sudo cp /tmp/rules.html /var/www/html/rules.html
+sudo cp /tmp/start_bf10miler.jpg /var/www/html/images/start_bf10miler.jpg
+=======================================
+super grand prix set up
+
+in project Tracker
+
+LEMP  setup follows 
+
+cd Documents/ptcclub/HRSGP
+
+
+gcloud config set project solid-coral-755
+
+
+    --------- copy files:
+gcloud compute scp standings.html hrsupergp:/tmp
+
+gcloud compute scp * hrsupergp:/tmp --recurse
+
+ip:  http://35.231.70.150
+
+
+————to ssh:
+
+gcloud compute --project "solid-coral-755" ssh --zone "us-east1-d" "hrsupergp"
+
+randomart
+
+
+
+
+
+
+
+
+jotform:
+
+https://form.jotform.com/80666421974161
+
+=====zones
+
+> gcloud dns managed-zones describe hrsupergpzone
+
+creationTime: '2018-02-08T01:27:49.976Z'
+description: A Zone
+dnsName: hrsupergp.com.
+id: '5585950014376109441'
+kind: dns#managedZone
+name: hrsupergpzone
+nameServers:
+- ns-cloud-c1.googledomains.com.
+- ns-cloud-c2.googledomains.com.
+- ns-cloud-c3.googledomains.com.
+- ns-cloud-c4.googledomains.com.
+
+TO INSTALL::::::::>>>>>>>>>>>
+sudo apt-get install mysql-server nginx php5-fpm php5-mysql php-apc \
+    pwgen python-setuptools curl git unzip php5-curl php5-gd php5-intl \
+    php-pear php5-imagick php5-mcrypt php5-pspell php5-recode \
+    php5-sqlite php5-xmlrpc php5-xsl
+
+    mysql root password  sundog3425xy
+
+
+    cd /etc/nginx/sites-available
+
+:::::::::::<<<<<<<<<<<
+
+   
+ notes 1-7-2022
+
+ /var/www/html
+
+ /tmp
+
+sudo cp contact.html /var/www/html/contact.html
+
